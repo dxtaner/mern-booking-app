@@ -73,6 +73,79 @@ To test the error handling, you can visit `http://localhost:5000/test-error`, wh
 *   `/room/update/:id`: Update details of a specific room.
 *   `/room/delete/:id`: Delete a specific room.
 
+  Auth Routes Documentation
+
+Auth Routes Documentation
+=========================
+
+Overview
+--------
+
+The authentication routes handle user registration and login processes.
+
+Routes
+------
+
+*   **POST /register**: Register a new user.
+
+Accepts JSON payload containing user information.
+
+Example:
+
+    {
+      "username": "example_user",
+      "password": "example_password"
+    }
+
+*   **POST /login**: Log in an existing user.
+
+Accepts JSON payload containing user credentials.
+
+Example:
+
+    {
+      "username": "example_user",
+      "password": "example_password"
+    }
+
+Usage
+-----
+
+To use these routes in your Express application, ensure you have properly set up the controller logic and middleware for authentication.
+
+    // Import necessary modules and controllers
+    const express = require("express");
+    const router = express.Router();
+    const authController = require("../controllers/authController.js");
+    
+    // Define routes
+    router.post("/register", authController.registerUser);
+    router.post("/login", authController.loginUser);
+    
+    module.exports = router;
+    
+
+Controller Logic
+----------------
+
+Ensure you have appropriate controller logic implemented for registering and logging in users. This logic should interact with your database or authentication service.
+
+    // controllers/authController.js
+    
+    // Import necessary modules
+    const User = require("../models/User");
+    
+    // Controller function for registering a new user
+    exports.registerUser = async (req, res) => {
+      // Implement registration logic here
+    };
+    
+    // Controller function for logging in an existing user
+    exports.loginUser = async (req, res) => {
+      // Implement login logic here
+    };
+    
+
 Error Handling
 --------------
 
