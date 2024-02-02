@@ -144,7 +144,62 @@ Ensure you have appropriate controller logic implemented for registering and log
     exports.loginUser = async (req, res) => {
       // Implement login logic here
     };
-    
+  User Routes Documentation
+
+User Routes Documentation
+=========================
+
+Overview
+--------
+
+The user routes handle operations related to user profiles, such as fetching user data, updating profiles, and deleting user accounts. Additionally, certain routes are restricted to authenticated users or administrators.
+
+Routes
+------
+
+*   **GET /:userId**: Retrieve a specific user's profile.
+
+Requires authentication token.
+
+Returns the user's profile data.
+
+*   **GET /**: Retrieve all users (only accessible to administrators).
+
+Requires authentication token and admin privileges.
+
+Returns a list of all user profiles.
+
+*   **PUT /:userId**: Update a specific user's profile.
+
+Requires authentication token.
+
+Returns a response indicating success or failure.
+
+*   **DELETE /:userId**: Delete a specific user.
+
+Requires authentication token.
+
+Returns a response indicating success or failure.
+
+Middleware
+----------
+
+The following middleware functions are utilized to authenticate and authorize users accessing these routes:
+
+*   **authenticateToken**: Validates the authentication token provided in the request header.
+*   **verifyUser**: Verifies that the requesting user is the same as the user whose profile is being accessed or modified.
+*   **verifyAdmin**: Verifies that the requesting user has administrative privileges.
+
+Usage
+-----
+
+To use these routes in your Express application, ensure you have the necessary controller logic and middleware set up.
+
+Controller Logic
+----------------
+
+Ensure you have appropriate controller logic implemented for handling user-related operations, such as fetching user data, updating profiles, and deleting accounts.
+
 
 Error Handling
 --------------
