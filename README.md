@@ -200,6 +200,73 @@ Controller Logic
 
 Ensure you have appropriate controller logic implemented for handling user-related operations, such as fetching user data, updating profiles, and deleting accounts.
 
+Hotel Routes Documentation
+==========================
+
+Overview
+--------
+
+The hotel routes provide endpoints for managing hotel data, including creating, retrieving, updating, and deleting hotels. Additionally, there are endpoints for retrieving hotel statistics and room details.
+
+Routes
+------
+
+*   **POST /**: Create a new hotel.
+
+Requires admin privileges.
+
+*   **GET /**: Get all hotels.
+*   **GET /:id**: Get a specific hotel by ID.
+*   **GET /countByCity**: Get count of hotels by city.
+*   **GET /countByType**: Get count of hotels by type.
+*   **GET /room/:id**: Get rooms of a specific hotel by hotel ID.
+*   **PUT /:id**: Update a specific hotel by ID.
+
+Requires admin privileges.
+
+*   **DELETE /:id**: Delete a specific hotel by ID.
+
+Requires admin privileges.
+
+Middleware
+----------
+
+The `verifyAdmin` middleware is used to ensure that only administrators have access to certain routes.
+
+Controller Functions
+--------------------
+
+*   `createHotel`: Controller function to create a new hotel.
+*   `getHotels`: Controller function to get all hotels.
+*   `getHotel`: Controller function to get a specific hotel by ID.
+*   `countByCity`: Controller function to get count of hotels by city.
+*   `countByType`: Controller function to get count of hotels by type.
+*   `getHotelRooms`: Controller function to get rooms of a specific hotel by hotel ID.
+*   `updateHotel`: Controller function to update a specific hotel by ID.
+*   `deleteHotel`: Controller function to delete a specific hotel by ID.
+
+Usage
+-----
+
+Ensure you have the necessary controller logic and middleware set up to handle requests to these routes.
+
+
+
+
+Security
+--------
+
+Some routes require admin privileges for access. Ensure that proper authentication and authorization mechanisms are in place.
+
+Error Handling
+--------------
+
+Implement error handling to deal with various scenarios such as invalid requests, database errors, or unauthorized access.
+
+Feedback and Contributions
+--------------------------
+
+Feedback and contributions to improve these routes and documentation are welcome. Feel free to open issues or pull requests in the repository.
 
 Error Handling
 --------------
