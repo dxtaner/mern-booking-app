@@ -250,8 +250,51 @@ Usage
 
 Ensure you have the necessary controller logic and middleware set up to handle requests to these routes.
 
+Room Routes Documentation
+=========================
 
+Overview
+--------
 
+The room routes provide endpoints for managing room data, including creating, retrieving, updating, and deleting rooms. Additionally, there's an endpoint for updating room availability.
+
+Routes
+------
+
+*   **POST /:hotelid**: Create a new room for a specific hotel.
+
+Requires admin privileges.
+
+*   **GET /**: Get all rooms.
+*   **GET /:id**: Get a specific room by ID.
+*   **PUT /availability/:id**: Update availability of a specific room by ID.
+*   **PUT /:id**: Update a specific room by ID.
+
+Requires admin privileges.
+
+*   **DELETE /:id/:hotelid**: Delete a specific room by ID and hotel ID.
+
+Requires admin privileges.
+
+Middleware
+----------
+
+The `verifyAdmin` middleware is used to ensure that only administrators have access to certain routes.
+
+Controller Functions
+--------------------
+
+*   `createRoom`: Controller function to create a new room.
+*   `getRooms`: Controller function to get all rooms.
+*   `getRoom`: Controller function to get a specific room by ID.
+*   `updateRoomAvailability`: Controller function to update availability of a specific room by ID.
+*   `updateRoom`: Controller function to update a specific room by ID.
+*   `deleteRoom`: Controller function to delete a specific room by ID and hotel ID.
+
+Usage
+-----
+
+Ensure you have the necessary controller logic and middleware set up to handle requests to these routes.
 
 Security
 --------
